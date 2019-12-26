@@ -27,15 +27,20 @@ class MainActivity : AppCompatActivity(), LoginView{
     private fun login() {
         val usuario = et_usuario.text.trim().toString()
         val password = et_password.text.trim().toString()
+        presenter!!.login(usuario,password)
     }
 
     override fun mostrarMensaje(mensaje: String) {
-        Toast.makeText(this, "Test", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
 
     private fun irRegistro() {
         val intent = Intent(this, RegistroActivity::class.java)
         startActivity(intent)
+    }
+
+    override fun getContext():AppCompatActivity {
+        return this
     }
 
 
