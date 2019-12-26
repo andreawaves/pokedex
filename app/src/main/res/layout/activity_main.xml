@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    tools:context=".MainActivity">
+    android:background="@drawable/wall"
+    tools:context=".View.MainActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -26,8 +26,8 @@
             android:gravity="center"
             android:text="Pokemon"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFC107"
-            android:textSize="50sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="55sp"
             android:textStyle="bold"
             app:fontFamily="@font/numans" />
 
@@ -40,8 +40,8 @@
             android:gravity="center"
             android:text="Trading cards"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#FFC107"
-            android:textSize="25sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:fontFamily="@font/numans" />
     </LinearLayout>
@@ -63,18 +63,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:ems="10"
             android:fontFamily="@font/numans"
             android:hapticFeedbackEnabled="false"
             android:hint="Ingrese usuario"
             android:inputType="text"
             android:singleLine="false"
-            android:textColor="#FFC107"
-            android:textColorHighlight="#FFC107"
-            android:textColorHint="#92FFC107"
-            android:textColorLink="#FFC107"
-            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorGris"
+            android:textSize="20sp"
             android:typeface="monospace" />
 
         <EditText
@@ -82,18 +80,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:ems="10"
             android:fontFamily="@font/numans"
             android:hapticFeedbackEnabled="false"
             android:hint="Password"
             android:inputType="textPassword"
             android:singleLine="false"
-            android:textColor="#FFC107"
-            android:textColorHighlight="#FFC107"
-            android:textColorHint="#92FFC107"
-            android:textColorLink="#FFC107"
-            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorGris"
+            android:textSize="20sp"
             android:typeface="monospace" />
 
         <LinearLayout
@@ -104,34 +100,28 @@
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:layout_weight="1"
                 android:backgroundTint="#F3F1F1"
                 android:fontFamily="@font/numans"
                 android:shadowColor="#FFFFFF"
                 android:text="Login"
-                android:textColor="#26347E"
-                android:textColorHighlight="#26347E"
-                android:textColorHint="#26347E"
-                android:textColorLink="#26347E"
-                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
             <Button
                 android:id="@+id/btn_registro"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:layout_weight="1"
                 android:backgroundTint="#F3F1F1"
                 android:fontFamily="@font/numans"
                 android:shadowColor="#FFFFFF"
                 android:text="Registro"
-                android:textColor="#26347E"
-                android:textColorHighlight="#26347E"
-                android:textColorHint="#26347E"
-                android:textColorLink="#26347E"
-                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:typeface="monospace" />
         </LinearLayout>
