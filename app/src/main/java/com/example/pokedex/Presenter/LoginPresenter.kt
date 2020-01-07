@@ -8,7 +8,7 @@ import com.example.pokedex.View.MainActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
-class LoginPresenter (val view: LoginView){
+class LoginPresenter (val view: LoginPresenter.View){
     var realm : Realm
     var mContext : AppCompatActivity
 
@@ -52,9 +52,10 @@ class LoginPresenter (val view: LoginView){
         val intent = Intent(mContext, DashboardActivity::class.java)
         mContext.startActivity(intent)
     }
+
+    interface View {
+        fun mostrarMensaje(mensaje:String)
+        fun getContext(): AppCompatActivity
+    }
 }
 
-interface LoginView {
-    fun mostrarMensaje(mensaje:String)
-    fun getContext(): AppCompatActivity
-}

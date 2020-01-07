@@ -4,11 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.pokedex.Presenter.RegistroPresenter
-import com.example.pokedex.Presenter.View
 import com.example.pokedex.R
 import kotlinx.android.synthetic.main.activity_registro.*
 
-class RegistroActivity : AppCompatActivity(), View {
+class RegistroActivity : AppCompatActivity(), RegistroPresenter.View {
 
     private var presenter: RegistroPresenter? = null
 

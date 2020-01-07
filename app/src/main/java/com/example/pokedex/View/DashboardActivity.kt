@@ -4,14 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.example.pokedex.Presenter.DashboardPresenter
-import com.example.pokedex.Presenter.DashboardView
-import com.example.pokedex.Presenter.LoginPresenter
 import com.example.pokedex.R
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.my_toolbar.view.*
 
 
-class DashboardActivity : AppCompatActivity(), DashboardView{
+class DashboardActivity : AppCompatActivity(), DashboardPresenter.View{
 
     var presenter : DashboardPresenter? = null
 

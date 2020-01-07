@@ -7,7 +7,7 @@ import com.example.pokedex.Model.Entrenador
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
-class RegistroPresenter (val view: View) {
+class RegistroPresenter (val view: RegistroPresenter.View) {
 
     var realm : Realm
     var mContext : AppCompatActivity
@@ -60,9 +60,11 @@ class RegistroPresenter (val view: View) {
         mContext.startActivity(intent)
     }
 
+    interface View {
+        fun mostrarMensaje(mensaje : String)
+        fun getContext():AppCompatActivity
+    }
+
 }
 
-interface View {
-    fun mostrarMensaje(mensaje : String)
-    fun getContext():AppCompatActivity
-}
+

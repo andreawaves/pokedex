@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat.startActivity
 import com.example.pokedex.View.AtraparActivity
 import com.example.pokedex.View.RegistroActivity
 
-class DashboardPresenter (val view: DashboardView) {
+class DashboardPresenter (val view: DashboardPresenter.View) {
     var mContext : AppCompatActivity
 
     init {
@@ -21,10 +21,11 @@ class DashboardPresenter (val view: DashboardView) {
     fun irMiPokedex() {
         //TODO
     }
+
+    interface View {
+        fun getContext(): AppCompatActivity
+    }
 }
 
 
 
-interface DashboardView {
-    fun getContext(): AppCompatActivity
-}

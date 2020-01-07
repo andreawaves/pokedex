@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.pokedex.Presenter.LoginPresenter
-import com.example.pokedex.Presenter.LoginView
 import com.example.pokedex.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), LoginView{
+class MainActivity : AppCompatActivity(), LoginPresenter.View{
 
     var presenter : LoginPresenter? = null
 
