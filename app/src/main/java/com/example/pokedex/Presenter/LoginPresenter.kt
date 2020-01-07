@@ -1,7 +1,10 @@
 package com.example.pokedex.Presenter
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pokedex.Model.Entrenador
+import com.example.pokedex.View.DashboardActivity
+import com.example.pokedex.View.MainActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
@@ -27,6 +30,7 @@ class LoginPresenter (val view: LoginView){
             } else {
                 if (p == password) {
                     view.mostrarMensaje("Ingreso existoso")
+                    irDashboard()
                 } else {
                     view.mostrarMensaje("Contraseña incorrecta")
                 }
@@ -42,6 +46,11 @@ class LoginPresenter (val view: LoginView){
         else {
             return entrenadores[0]!!.password
         }
+    }
+
+    fun irDashboard(){
+        val intent = Intent(mContext, DashboardActivity::class.java)
+        mContext.startActivity(intent)
     }
 }
 
