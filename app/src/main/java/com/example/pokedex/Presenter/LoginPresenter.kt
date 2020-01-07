@@ -12,7 +12,7 @@ class LoginPresenter (val view: LoginView){
     init {
         mContext = view.getContext()
         Realm.init(mContext)
-        val config = RealmConfiguration.Builder().directory(mContext.getExternalFilesDir(null)!!)
+        val config = RealmConfiguration.Builder()
             .name("entrenador.realm").build()
         realm = Realm.getInstance(config)
     }
@@ -21,11 +21,15 @@ class LoginPresenter (val view: LoginView){
         if (usuario==""||password==""){
             view.mostrarMensaje("Complete todos los campos")
         } else {
-            var p = retornarPassword(usuario)
+            val p = retornarPassword(usuario)
             if (p == null) {
-                view.mostrarMensaje("¡No existes!")
+                view.mostrarMensaje("Ese usuario no existe")
             } else {
-                view.mostrarMensaje("¡Benvenuto!")
+                if (p == password) {
+                    view.mostrarMensaje("Ingreso existoso")
+                } else {
+                    view.mostrarMensaje("Contraseña incorrecta")
+                }
             }
         }
     }
