@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.my_toolbar.view.*
 
 class AtraparActivity : AppCompatActivity(), AtraparPresenter.View {
 
-
     private var presenter: AtraparPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +24,18 @@ class AtraparActivity : AppCompatActivity(), AtraparPresenter.View {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         presenter = AtraparPresenter(this)
-        gv_cercanos.adapter = presenter!!.retornarAdapter()
+
+        presenter!!.obtenerPokemones()
     }
 
     override fun getContext(): AppCompatActivity {
         return this
     }
+
+    override fun setAdapter(pokemonList : ArrayList<Pokemon>)  {
+        var adapter: PokemonAdapter? = null
+        adapter = PokemonAdapter(this, pokemonList)
+        gv_cercanos.adapter = adapter
+    }
+
 }

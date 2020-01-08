@@ -5,6 +5,8 @@ import io.realm.annotations.RealmClass
 
 
 class Pokemon {
-    var nombre:String = ""
+    var id:Int = 0
+    var name:String = ""
+    var url:String = ""
     var urlFoto:String = ""
 }

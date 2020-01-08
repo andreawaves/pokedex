@@ -36,7 +36,7 @@ class PokemonAdapter : BaseAdapter {
         var inflator = mContext!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         var pokemonView = inflator.inflate(R.layout.pokemon_item, null)
 
-        pokemonView.tv_nombre.text = pokemon.nombre
+        pokemonView.tv_nombre.text = pokemon.name
 
         return pokemonView
     }
