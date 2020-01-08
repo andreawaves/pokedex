@@ -1,6 +1,7 @@
 package com.example.pokedex.Presenter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.BaseAdapter
 import com.bumptech.glide.Glide
 import com.example.pokedex.Model.Pokemon
 import com.example.pokedex.R
+import com.example.pokedex.View.CapturarActivity
 import kotlinx.android.synthetic.main.pokemon_item.view.*
 
 class PokemonAdapter : BaseAdapter {
@@ -43,7 +45,16 @@ class PokemonAdapter : BaseAdapter {
             .load(pokemon.urlFoto)
             .into(pokemonView.iv_foto)
 
+        pokemonView.item_pokemon.setOnClickListener { irCapturar(pokemon) }
+
         return pokemonView
+    }
+
+    fun irCapturar(pokemon: Pokemon){
+        val intent = Intent(mContext, CapturarActivity::class.java)
+        intent.putExtra("pokemon",pokemon)
+        mContext!!.startActivity(intent)
+
     }
 
 }

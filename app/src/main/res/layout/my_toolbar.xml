@@ -12,7 +12,6 @@
     android:layout_height="wrap_content"
     android:text="Title"
     android:textSize="30sp"
-
     android:textColor="@android:color/white"
     android:layout_gravity="center"
     android:fontFamily="@font/numans"
