@@ -1,6 +1,8 @@
 package com.example.pokedex.Presenter
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pokedex.Model.Entrenador
 import com.example.pokedex.View.DashboardActivity
@@ -30,6 +32,11 @@ class LoginPresenter (val view: LoginPresenter.View){
             } else {
                 if (p == password) {
                     view.mostrarMensaje("Ingreso existoso")
+
+                    val editor : SharedPreferences.Editor = mContext.getSharedPreferences("login",
+                        Context.MODE_PRIVATE).edit()
+                    editor.putString("userID",usuario)
+                    editor.apply()
 
                     irDashboard()
                 } else {

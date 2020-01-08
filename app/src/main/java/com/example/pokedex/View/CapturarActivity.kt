@@ -44,4 +44,8 @@ class CapturarActivity : AppCompatActivity(), CapturarPresenter.View {
         return this
     }
 
+    override fun mostrarMensaje(string: String) {
+        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
+    }
+
 }

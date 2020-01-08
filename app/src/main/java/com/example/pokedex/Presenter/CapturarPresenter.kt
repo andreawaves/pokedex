@@ -1,6 +1,8 @@
 package com.example.pokedex.Presenter
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pokedex.Model.Entrenador
@@ -90,12 +92,15 @@ class CapturarPresenter (val view: CapturarPresenter.View) {
         val timeStamp: String = SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Date())
 
         pokemonCapturado.timestamp = timeStamp
-        pokemonCapturado.entrenador = "1"
+
+        val sharedpreferences = mContext.getSharedPreferences("login", Context.MODE_PRIVATE)
+        pokemonCapturado.entrenador = sharedpreferences.getString("userID", "")!!
 
         realm.commitTransaction()
 
-        Log.e(TAG,"ATRAPADO: " + pokemonCapturado.base_experience + " " + pokemonCapturado.timestamp)
-        //view.mostrarMensaje("¡Pokemón capturado!")
+        Log.e(TAG,"ATRAPADO: " + pokemonCapturado.entrenador + " " + pokemonCapturado.timestamp)
+        view.mostrarMensaje("¡Pokemón capturado!")
+        irDashboard()
     }
 
     fun irDashboard() {
@@ -105,5 +110,6 @@ class CapturarPresenter (val view: CapturarPresenter.View) {
 
     interface View {
         fun getContext(): AppCompatActivity
+        fun mostrarMensaje(string: String)
     }
 }
