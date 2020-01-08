@@ -6,12 +6,13 @@ import android.widget.ListAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pokedex.Model.Pokemon
 import com.example.pokedex.Model.Respuesta
-import com.example.pokedex.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import android.R
+import android.icu.util.Calendar
 
 
 class AtraparPresenter (view:View) {
@@ -45,11 +46,51 @@ class AtraparPresenter (view:View) {
 
                     for (i in 0 until listaPokemons.size){
                         Log.e(TAG,"Pokemon: " + listaPokemons[i].name)
+                        listaPokemons[i].name = listaPokemons[i].name.capitalize()
                         listaPokemons[i].id = i+1
                         listaPokemons[i].urlFoto = listaPokemons[i].urlFoto + (i+1) + ".png"
                         Log.e(TAG,"Pokemon: " + listaPokemons[i].urlFoto)
+
+                        //Spawn
+                        when (listaPokemons[i].id) {
+                            1 -> listaPokemons[i].hora = 9
+                            2 -> listaPokemons[i].hora = 7
+                            3 -> listaPokemons[i].hora = 11
+                            4 -> listaPokemons[i].hora = 8
+                            5 -> listaPokemons[i].hora = 7
+                            6 -> listaPokemons[i].hora = 1
+                            7 -> listaPokemons[i].hora = 4
+                            8 -> listaPokemons[i].hora = 7
+                            9 -> listaPokemons[i].hora = 12
+                            10 -> listaPokemons[i].hora = 4
+                            11 -> listaPokemons[i].hora = 2
+                            12 -> listaPokemons[i].hora = 3
+                            13 -> listaPokemons[i].hora = 2
+                            14 -> listaPokemons[i].hora = 2
+                            15 -> listaPokemons[i].hora = 4
+                            16 -> listaPokemons[i].hora = 1
+                            17 -> listaPokemons[i].hora = 1
+                            18 -> listaPokemons[i].hora = 1
+                            19 -> listaPokemons[i].hora = 1
+                            20 -> listaPokemons[i].hora = 1
+                            else -> listaPokemons[i].hora = 0
+                        }
                     }
-                    view.setAdapter(listaPokemons)
+
+                    //Filtrando x hora
+                    var listaPokemonsFinal = ArrayList<Pokemon>()
+
+                    val rightNow = Calendar.getInstance()
+                    val currentHour = rightNow.get(Calendar.HOUR)
+                    Log.e(TAG,"CURRENT HOUR: " + currentHour )
+
+                    for (i in 0..19) {
+                        if (listaPokemons[i].hora == currentHour){
+                            listaPokemonsFinal.add(listaPokemons[i])
+                        }
+                    }
+
+                    view.setAdapter(listaPokemonsFinal)
 
                 } else {
                     Log.e(TAG,"onResponse: " + response.errorBody())

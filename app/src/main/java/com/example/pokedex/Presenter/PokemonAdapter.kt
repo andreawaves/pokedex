@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import com.bumptech.glide.Glide
 import com.example.pokedex.Model.Pokemon
 import com.example.pokedex.R
 import kotlinx.android.synthetic.main.pokemon_item.view.*
@@ -37,6 +38,10 @@ class PokemonAdapter : BaseAdapter {
         var pokemonView = inflator.inflate(R.layout.pokemon_item, null)
 
         pokemonView.tv_nombre.text = pokemon.name
+
+        Glide.with(mContext!!)
+            .load(pokemon.urlFoto)
+            .into(pokemonView.iv_foto)
 
         return pokemonView
     }
