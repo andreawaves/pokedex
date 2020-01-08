@@ -1,6 +1,8 @@
 package com.example.pokedex.Model
 
 import java.io.Serializable
+import io.realm.RealmObject
+import io.realm.annotations.RealmClass
 
 data class Pokemon (
     var id:Int = 0,
@@ -15,3 +17,15 @@ data class PokemonDetalle (
     var height:Int = 0,
     var weight:Int = 0
 ) : Serializable
+
+@RealmClass
+open class PokemonCapturado : RealmObject() {
+    var name:String = ""
+    var urlFoto:String = ""
+    var base_experience:Int = 0
+    var height:Int = 0
+    var weight:Int = 0
+
+    var timestamp:String = ""
+    var entrenador:String = ""
+}

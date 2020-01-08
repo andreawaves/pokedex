@@ -30,6 +30,7 @@ class LoginPresenter (val view: LoginPresenter.View){
             } else {
                 if (p == password) {
                     view.mostrarMensaje("Ingreso existoso")
+
                     irDashboard()
                 } else {
                     view.mostrarMensaje("Contraseña incorrecta")
