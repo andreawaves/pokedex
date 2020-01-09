@@ -11,12 +11,13 @@
         android:roundIcon="@mipmap/ic_pokedex_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.CapturarActivity"
-            android:parentActivityName=".View.AtraparActivity"
-            ></activity>
+        <activity android:name=".View.PokedexActivity"></activity>
+        <activity
+            android:name=".View.CapturarActivity"
+            android:parentActivityName=".View.AtraparActivity" />
         <activity
             android:name=".View.AtraparActivity"
-            android:parentActivityName=".View.DashboardActivity"></activity>
+            android:parentActivityName=".View.DashboardActivity" />
         <activity android:name=".View.DashboardActivity" />
         <activity android:name=".View.RegistroActivity" />
         <activity android:name=".View.MainActivity">

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import com.example.pokedex.View.AtraparActivity
+import com.example.pokedex.View.PokedexActivity
 import com.example.pokedex.View.RegistroActivity
 
 class DashboardPresenter (val view: DashboardPresenter.View) {
@@ -18,8 +19,9 @@ class DashboardPresenter (val view: DashboardPresenter.View) {
         mContext.startActivity(intent)
     }
 
-    fun irMiPokedex() {
-        //TODO
+    fun irPokedex() {
+        val intent = Intent(mContext, PokedexActivity::class.java)
+        mContext.startActivity(intent)
     }
 
     interface View {

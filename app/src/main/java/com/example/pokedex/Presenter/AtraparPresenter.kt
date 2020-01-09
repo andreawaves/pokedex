@@ -1,8 +1,6 @@
 package com.example.pokedex.Presenter
 
 import android.util.Log
-import android.widget.Adapter
-import android.widget.ListAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pokedex.Model.Pokemon
 import com.example.pokedex.Model.Respuesta
@@ -11,8 +9,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import android.R
 import android.icu.util.Calendar
+import android.widget.Toast
 
 
 class AtraparPresenter (view:View) {
@@ -33,7 +31,6 @@ class AtraparPresenter (view:View) {
 
 
     fun obtenerPokemones() {
-
         service = retrofit.create(ApiService::class.java)
         service.obtenerListaPokemon().enqueue(object : Callback<Respuesta> {
             override fun onResponse(
@@ -90,6 +87,9 @@ class AtraparPresenter (view:View) {
                         }
                     }
 
+                    if (listaPokemonsFinal.isEmpty()) {
+                        Toast.makeText(mContext, "No hay pokemones :C", Toast.LENGTH_LONG).show()
+                    }
                     view.setAdapter(listaPokemonsFinal)
 
                 } else {

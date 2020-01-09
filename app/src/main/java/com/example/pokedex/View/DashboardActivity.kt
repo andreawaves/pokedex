@@ -23,6 +23,7 @@ class DashboardActivity : AppCompatActivity(), DashboardPresenter.View{
 
         presenter = DashboardPresenter(this)
         btn_atrapar.setOnClickListener { presenter!!.irAtrapar()}
+        btn_pokedex.setOnClickListener{ presenter!!.irPokedex()}
     }
 
     override fun getContext(): AppCompatActivity {
