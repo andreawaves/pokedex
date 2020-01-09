@@ -13,26 +13,29 @@
         />
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/l_pokedex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingHorizontal="30dp"
-        android:paddingVertical="50dp"
+        android:paddingVertical="0dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tb_pokedex">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="355dp"
-            android:layout_height="300dp"
-            android:layout_marginBottom="5dp"
+            android:id="@+id/iv_pokemonPhoto"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:baselineAlignBottom="false"
             app:srcCompat="@color/azulOscuro" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="205dp"
             android:layout_marginHorizontal="20dp"
             android:orientation="vertical">
 
@@ -40,7 +43,7 @@
                 android:id="@+id/tv_pokemonName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="25dp"
                 android:fontFamily="@font/numans"
                 android:gravity="center"
                 android:text="Name"
@@ -51,6 +54,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -78,6 +82,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -105,6 +110,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -161,42 +167,38 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
             android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn_anterior"
-                android:layout_width="5dp"
+                android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:fontFamily="@font/numans"
-                android:includeFontPadding="false"
-                android:shadowColor="#00FFFFFF"
-                android:text="←"
-                android:textColor="#000000"
-                android:textSize="50sp" />
+                android:backgroundTint="#000000"
+                app:srcCompat="@android:drawable/ic_media_rew" />
 
             <Button
                 android:id="@+id/btn_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
+                android:backgroundTint="#000000"
                 android:fontFamily="@font/numans"
-                android:shadowColor="#00FFFFFF"
                 android:text="Menú"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btn_siguiente"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
+                android:backgroundTint="#000000"
+                android:textAlignment="viewStart"
                 app:srcCompat="@android:drawable/ic_media_ff" />
-
         </LinearLayout>
     </LinearLayout>
 

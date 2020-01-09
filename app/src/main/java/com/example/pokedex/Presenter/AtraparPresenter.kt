@@ -68,8 +68,8 @@ class AtraparPresenter (view:View) {
                             16 -> listaPokemons[i].hora = 1
                             17 -> listaPokemons[i].hora = 1
                             18 -> listaPokemons[i].hora = 1
-                            19 -> listaPokemons[i].hora = 1
-                            20 -> listaPokemons[i].hora = 1
+                            19 -> listaPokemons[i].hora = 5 //1
+                            20 -> listaPokemons[i].hora = 5 //1
                             else -> listaPokemons[i].hora = 0
                         }
                     }
