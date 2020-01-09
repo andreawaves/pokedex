@@ -2,6 +2,7 @@ package com.example.pokedex.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
@@ -36,6 +37,7 @@ class PokedexActivity : AppCompatActivity(), PokedexPresenter.View {
         if (pokemones == null) {
             l_pokedex.visibility = View.INVISIBLE
             Toast.makeText(this, "No tienes pokemones :c", Toast.LENGTH_LONG).show()
+
         } else {
             mostrarPokemon(pokemones!![0]!!)
             btn_anterior.setOnClickListener {actualizarInfo(-1)}
